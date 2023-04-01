@@ -3,7 +3,7 @@ import SInglePlayer from '../SinglePlayer/SInglePlayer';
 import './Players.css';
 
 const Players = ({ players, cart, setCart }) => {
-    console.log(players);
+    // console.log(players);
     return (
         <div>
             <div className="cart-container">

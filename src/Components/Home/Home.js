@@ -31,6 +31,9 @@ const Home = () => {
             <div className="right-side">
                 <div className="cart">
                     <p>This is cart</p>
+                    {
+                        cart.map(p => <li>{p.idPlayer}</li>)
+                    }
                 </div>
             </div>
         </div>
