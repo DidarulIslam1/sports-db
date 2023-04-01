@@ -1,0 +1,26 @@
+.card {
+    width: 250px;
+    height: 450px;
+    border: 3px solid gray;
+    border-radius: 30px;
+    margin-top: 50px;
+    margin-left: 50px;
+    box-shadow: 10px 10px 10px darkolivegreen;
+}
+
+.card img {
+    width: 220px;
+    border-radius: 30px;
+
+}
+
+.card-btn {
+    margin: 1px;
+    background-color: antiquewhite;
+    border: 3px solid gray;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.card-btn:hover {
+    color: red;
+}
