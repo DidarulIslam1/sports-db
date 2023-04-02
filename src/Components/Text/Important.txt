@@ -1,0 +1,11 @@
+# Install toastify-react:-
+--> Google-->Search-->toastify react
+--> Go to (https://www.npmjs.com/package/react-toastify) this site
+--> Copy this (npm i react-toastify)
+--> vs-code-terminal-->install: npm i react-toastify
+--> With copy this:   import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+--> Past this to: App.js 
+--> Also past this to Home.js: import { ToastContainer, toast } from 'react-toastify';
+--> Finally set this (toast("Wow so easy!");) inside the handleDelete function.
+------Done-------

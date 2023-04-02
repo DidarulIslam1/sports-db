@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Players from '../Players/Players';
+import { ToastContainer, toast } from 'react-toastify';
 import './Home.css';
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
         // console.log(id);
         const deletePlayer = cart.filter((pd) => pd.idPlayer !== id);
         setCart(deletePlayer);
+        toast("Wow delete from cart!!!");
     }
     return (
         <div className='home-container'>
