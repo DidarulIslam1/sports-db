@@ -29,3 +29,20 @@
     position: sticky;
     top: 0;
 }
+
+.cart-info-container {
+    display: flex;
+    justify-content: center;
+}
+
+.delete-btn {
+    padding: 0 20px;
+    background-color: yellow;
+    margin: 2px 5px;
+    font-weight: 900;
+    font-size: large;
+}
+
+.delete-btn:hover {
+    color: red;
+}

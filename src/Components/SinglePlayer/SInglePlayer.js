@@ -11,11 +11,17 @@ const SInglePlayer = ({ player, cart, setCart }) => {
             strPlayer,
             idPlayer,
             strCutout,
-            price: "115",
+            price: 115,
         };
-        if (cart) {
-            const newPlayer = [...cart, info];
-            setCart(newPlayer);
+        // console.log(info);
+
+        if (cart?.length) {
+            setCart([...cart, info]);
+            return;
+        }
+        else {
+            setCart([info]);
+            return;
         }
         // console.log(newPlayer);
     };

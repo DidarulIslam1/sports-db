@@ -15,6 +15,12 @@ const Home = () => {
             })
     }, [search]);
     // console.log(players);
+
+    const handleDelete = (id) => {
+        // console.log(id);
+        const deletePlayer = cart.filter((pd) => pd.idPlayer !== id);
+        setCart(deletePlayer);
+    }
     return (
         <div className='home-container'>
             <div className="left-side">
@@ -23,6 +29,7 @@ const Home = () => {
                 <button className='search-btn'>Search</button>
                 <div className="players-container">
                     <Players players={players}
+                        key={players.idPlayer}
                         cart={cart}
                         setCart={setCart}
                     ></Players>
@@ -31,14 +38,19 @@ const Home = () => {
             <div className="right-side">
                 <div className="cart">
                     <p>This is cart</p>
-                    {
-                        cart.map(p => <li>{p.idPlayer}</li>)
-                    }
+                    {cart?.map(p => (
+                        <div className='cart-info-container'>
+                            <li>{p.strPlayer}</li>
+                            <button onClick={() => handleDelete(p.idPlayer)}
+                                className='delete-btn'>X
+                            </button>
+                        </div>))}
                 </div>
             </div>
         </div>
     );
 };
+
 
 
 export default Home; <h2>Iam home</h2>
