@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Players from '../Players/Players';
 import { ToastContainer, toast } from 'react-toastify';
+import Swal from 'sweetalert2'
 import './Home.css';
 
 const Home = () => {
@@ -19,9 +20,14 @@ const Home = () => {
 
     const handleDelete = (id) => {
         // console.log(id);
-        const deletePlayer = cart.filter((pd) => pd.idPlayer !== id);
-        setCart(deletePlayer);
+        const leftPlayer = cart.filter((pd) => pd.idPlayer !== id);
+        setCart(leftPlayer);
         toast("Wow delete from cart!!!");
+        Swal.fire(
+            'Good job!',
+            'You clicked the button!',
+            'success'
+        )
     }
     return (
         <div className='home-container'>

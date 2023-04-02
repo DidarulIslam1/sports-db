@@ -9,3 +9,18 @@
 --> Also past this to Home.js: import { ToastContainer, toast } from 'react-toastify';
 --> Finally set this (toast("Wow so easy!");) inside the handleDelete function.
 ------Done-------
+
+# Install sweet alert:-
+--> Google --> search --> sweet alert 2 --> 
+--> Go to (https://sweetalert2.github.io/) this site
+--> click installation --> 
+--> copy this: npm install sweetalert2
+--> install the npm from vs-code terminal -->
+--> also copy this: import Swal from 'sweetalert2' -->
+--> & past to Home.js file -->
+--> now copy a reaction as you need: (Swal.fire(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+))
+--> past 
