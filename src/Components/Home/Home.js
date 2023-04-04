@@ -45,7 +45,7 @@ const Home = () => {
             </div>
             <div className="right-side">
                 <div className="cart">
-                    <p>This is cart</p>
+                    <p>This is cart: {cart.length}</p>
                     {cart?.map(p => (
                         <div className='cart-info-container'>
                             <li>{p.strPlayer}</li>

@@ -25,7 +25,48 @@ const SInglePlayer = ({ player, cart, setCart }) => {
         }
         // console.log(newPlayer);
     };
-    // console.log(cart);
+    const handleBookmark = () => {
+        const info = {
+            strPlayer,
+            idPlayer,
+            strCutout,
+            quantity: 1,
+            bookmark: "true",
+        };
+        const bookmark = localStorage.getItem("bookmark");
+        const oldBookmark = JSON.parse(bookmark);
+        if (oldBookmark) {
+            const isExist = oldBookmark.find(p => p.idPlayer === idPlayer);
+            if (isExist) {
+                const updateQuantity = isExist.quantity + 1;
+                isExist.quantity = updateQuantity;
+                localStorage.setItem("bookmark", JSON.stringify(oldBookmark));
+            }
+            else {
+                localStorage.setItem("bookmark", JSON.stringify([...oldBookmark, info]));
+            }
+        }
+        else {
+            localStorage.setItem("bookmark", JSON.stringify([info]));
+        }
+
+        // const prevBookmark = localStorage.getItem("bookmark");
+        // const oldBookmark = JSON.parse(prevBookmark);
+        // if (oldBookmark) {
+        //     const isExist = oldBookmark.find(p => p.idPlayer === idPlayer);
+        //     if (isExist) {
+        //         alert("Already bookmarked");
+        //         return;
+        //     }
+        //     else {
+        //         localStorage.setItem("bookmark", JSON.stringify([...oldBookmark, info]));
+        //     }
+        // }
+        // else {
+        //     localStorage.setItem("bookmark", JSON.stringify([info]));
+        //     console.log('nai')
+        // }
+    };
 
     return (
         <div className='card'>
@@ -38,7 +79,7 @@ const SInglePlayer = ({ player, cart, setCart }) => {
             <p className='btn-p'>
                 <button className='card-btn'>Details</button>
                 <button onClick={handleAddToCart} className='card-btn'>Add To Cart</button>
-                <button className='card-btn'>Bookmark</button>
+                <button onClick={handleBookmark} className='card-btn'>Bookmark</button>
             </p>
 
         </div>
